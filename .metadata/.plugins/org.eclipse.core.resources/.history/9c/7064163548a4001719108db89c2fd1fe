@@ -20,8 +20,8 @@ public class DemoCookie extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String name = URLEncoder.encode("å§“å", "utf-8");
-		String value = URLEncoder.encode("å°éƒ­", "utf-8");
+		String name = URLEncoder.encode("ÓÃ»§Ãû", "utf-8");
+		String value = URLEncoder.encode("ÌøÌø»¢", "utf-8");
 		
 		Cookie coo = new Cookie(name,value);
 		coo.setMaxAge(60);
