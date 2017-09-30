@@ -1,0 +1,8 @@
+package com.ihtc.json;
+
+public class Person {
+
+	String name;
+	int age;
+	
+}

@@ -1,0 +1,10 @@
+package com.ihtc.json;
+
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(value="/json")
+public class JsonAction extends HttpServlet{
+
+	
+	
+}

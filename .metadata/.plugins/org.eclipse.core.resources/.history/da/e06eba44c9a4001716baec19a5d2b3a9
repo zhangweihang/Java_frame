@@ -1,0 +1,8 @@
+package com.ihtc.jstl;
+
+public class Person {
+
+	int id;
+	Student stu;
+	
+}

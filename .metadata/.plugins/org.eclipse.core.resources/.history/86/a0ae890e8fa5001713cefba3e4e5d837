@@ -1,0 +1,56 @@
+package com.ihtc.dom4jxml;
+
+import static org.junit.Assert.*;
+
+import java.io.InputStream;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class XMIRW {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() throws DocumentException {
+		//获取xml文件的读取流
+		SAXReader sax = new SAXReader();
+		//获取要读取的xml文件
+		InputStream is = XMIRW.class.getResourceAsStream("test.xml");
+		Document document = sax.read(is);
+		//用文档的对象去获取根标签
+		Element element = document.getRootElement();
+		//用根标签去获取所有子标签
+		List<Element> list = element.elements();
+		
+		//取第一层
+		List<Element> l1 = list.get(0).elements();
+		for(Element e : l1){
+			System.out.println(e.getName()+":"+e.getText());
+		}
+		//取第二层
+		List<Element> l1 = list.get(1).elements();
+		for(Element e : l1){
+			System.out.println(e.getName()+":"+e.getText());
+			
+			if(e.getName().equals("init-param")){
+				
+			}
+			
+		}
+		
+	}
+
+}

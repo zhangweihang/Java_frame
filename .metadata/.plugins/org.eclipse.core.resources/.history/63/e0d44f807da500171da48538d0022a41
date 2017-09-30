@@ -1,0 +1,20 @@
+package com.ihtc.json;
+
+import java.sql.PreparedStatement;
+
+import com.google.gson.JsonArray;
+
+public class TestJaon {
+
+	public String select(){
+		
+		JsonArray ja = new JsonArray();
+		
+		PreparedStatement ps = DBUtil.getCon().prepareStatement("select * from user where id<3");
+		
+	
+		
+		return null;
+	}
+	
+}
