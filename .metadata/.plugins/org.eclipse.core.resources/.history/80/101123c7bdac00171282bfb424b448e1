@@ -1,0 +1,15 @@
+package com.ihtc.util;
+
+public class PageCount {
+	//每页显示的数据条数
+	public static final int PAGE_SIZE = 8;
+	//页面数
+	private int pages;
+	//当前所在页数
+	private int index;
+	
+	//currentPage 当前页 listSize总长度
+	public PageCount(int currentPage,int listSize){
+		
+	}
+}

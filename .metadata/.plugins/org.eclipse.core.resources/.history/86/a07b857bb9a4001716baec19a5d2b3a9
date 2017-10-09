@@ -1,7 +1,0 @@
-package com.ihtc.listener;
-
-public class Shop {
-
-	public static ArrayList<String> list;
-	
-}

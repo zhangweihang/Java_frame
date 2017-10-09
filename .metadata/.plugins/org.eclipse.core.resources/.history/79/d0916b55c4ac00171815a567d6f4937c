@@ -1,0 +1,18 @@
+package com.ihtc.action;
+
+import javax.servlet.http.HttpServlet;
+
+import com.ihtc.service.PersonService;
+
+public class PersonAction extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//设置默认当前页
+	private int page = 1;
+	private PersonService personService = new PersonService();
+	
+	
+}

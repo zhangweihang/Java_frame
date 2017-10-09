@@ -1,0 +1,11 @@
+package com.ihtc.dao;
+
+import java.util.List;
+
+import com.ihtc.util.Person;
+
+public interface PersonDAO {
+	
+	List<Person> findAll();
+	
+}

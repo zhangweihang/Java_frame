@@ -1,0 +1,21 @@
+package com.ihtc.dao;
+
+import java.util.ArrayList;
+
+import com.ihtc.util.Person;
+
+public class PersonDAOImpl implements PersonDAO{
+
+	@Override
+	public ArrayList<Person> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Person> findByPage(int startPage) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

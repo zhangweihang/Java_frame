@@ -1,9 +1,0 @@
-package com.ihtc.listener;
-
-import java.util.ArrayList;
-
-public class Shop {
-
-	public static ArrayList<String> list;
-	
-}

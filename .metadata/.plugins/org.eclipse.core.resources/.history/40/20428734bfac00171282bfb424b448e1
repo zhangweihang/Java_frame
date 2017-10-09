@@ -1,0 +1,24 @@
+package com.ihtc.dao;
+
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+
+import com.ihtc.util.DBUtil;
+import com.ihtc.util.Person;
+
+public class PersonDAOImpl implements PersonDAO{
+
+	@Override
+	public ArrayList<Person> findAll() {
+		
+		PreparedStatement ps = DBUtil.getConn().prepareStatement("select * from person");
+		
+		return null;
+	}
+
+	@Override
+	public ArrayList<Person> findByPage(int startPage) {
+		return null;
+	}
+
+}
