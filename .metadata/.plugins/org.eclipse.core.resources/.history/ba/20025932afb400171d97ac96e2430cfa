@@ -1,0 +1,10 @@
+package com.ihtc.one;
+
+public class UserAction {
+
+	Public String m1(){
+		System.out.println("默认方法");
+		return null;
+	}
+	
+}

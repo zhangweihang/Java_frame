@@ -1,0 +1,26 @@
+package com.ithc.demo;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserAction extends ActionSupport{
+	
+	@Override
+	public String execute() throws Exception {
+		System.out.println("默认的方法 .. ");
+		
+		return NONE;
+	}
+	
+	
+	public String save(){
+		System.out.println("保存用户 .... ");
+		return NONE;
+	}
+	
+	public String insert(){
+		System.out.println("添加用户 ... ");
+		return NONE;
+	}
+	
+
+}

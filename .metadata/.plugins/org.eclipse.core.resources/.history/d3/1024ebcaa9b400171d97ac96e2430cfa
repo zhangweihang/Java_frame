@@ -1,0 +1,16 @@
+package com.ithc.demo8;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class AnimalAction extends ActionSupport{
+	
+	
+	@Override
+	public String execute() throws Exception {
+		System.out.println("吃饭 ... ");
+		
+		return NONE;
+	}
+	
+
+}

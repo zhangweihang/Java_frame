@@ -1,0 +1,12 @@
+package com.ihtc.demo4;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class Demo4Action extends ActionSupport{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}

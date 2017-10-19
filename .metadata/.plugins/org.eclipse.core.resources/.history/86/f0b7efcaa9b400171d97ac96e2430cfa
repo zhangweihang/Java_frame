@@ -1,0 +1,48 @@
+package com.ithc.demo1;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Set;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class Demo1ACtion extends ActionSupport{
+	
+	@Override
+	public String execute() throws Exception {
+		//获取ActionContext对象
+		ActionContext context = ActionContext.getContext();
+		
+		Map<String, Object> map = context.getParameters();
+		
+		Set<String> set = map.keySet();
+		
+		for (String key : set) {
+			//其实他就是一个String[]
+			Object object = map.get(key);
+			//如果判断对象是否为数组
+			if(object.getClass().isArray()){
+				System.out.println(key+" : "+Arrays.toString((String[])object));
+			}
+		}
+		
+		
+		//获取Application
+		context.getApplication().put("msg","小苍");
+		
+		//获取session
+		context.getSession().put("msg", "小东东");
+		
+		//获取request
+		
+		context.put("msg","小泽");
+		
+		
+		return SUCCESS;
+	}
+	
+	
+	
+
+}

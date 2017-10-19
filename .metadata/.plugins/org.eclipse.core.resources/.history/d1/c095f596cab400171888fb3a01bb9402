@@ -1,0 +1,8 @@
+package com.ihtc.demo5;
+
+public class Dog {
+
+	private String name;
+	private String password;
+	
+}

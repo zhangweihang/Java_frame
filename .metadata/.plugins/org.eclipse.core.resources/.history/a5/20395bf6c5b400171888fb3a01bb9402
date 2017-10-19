@@ -1,0 +1,21 @@
+package com.ihtc.demo2;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class Demo2Action extends ActionSupport{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Override
+	public String execute() throws Exception {
+		
+		
+		
+		return SUCCESS;
+		
+	}
+
+}

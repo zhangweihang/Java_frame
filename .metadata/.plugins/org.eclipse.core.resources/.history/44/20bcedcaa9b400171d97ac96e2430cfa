@@ -1,0 +1,46 @@
+package com.ithc.demo4;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PersonAction extends ActionSupport{
+	/**
+	 *  属性驱动
+	 *  属性的声明：
+	 *  	要与单表name属性的值相同
+	 *  	如果是超链接与请求的key相同
+	 *  提供该属性的set方法
+	 *  
+	 */
+	//form 表单参数
+	private String username;
+	private String password;
+	
+	public void setUsername(String username) {
+		System.out.println(" u 2");
+		this.username = username;
+	}
+
+	public void setPassword(String password) {
+		System.out.println(" p 2");
+		this.password = password;
+	}
+	//a标签请求参数 如果是中文会乱码需要自己 new String(值.getBytes("ISO-8859-1"),"UTF-8")
+	
+	private String age;
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		
+		System.out.println( username +" : "+password+" : "+new String(age.getBytes("ISO-8859-1"),"utf-8"));
+		
+		return NONE;
+	}
+	
+	
+	
+	
+
+}

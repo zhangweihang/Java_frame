@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 
+		复习通配符的访问方式
+	 -->
+   	<package name="demo" namespace="/" extends="struts-default">
+   		<action name="user_*" class="com.ithc.demo.UserAction" method="{1}"></action>
+   	
+   	</package>
+   	
+   	<!-- 
+   		完全解耦和的方法
+   	 -->
+   	<package name="demo1" namespace="/" extends="struts-default">
+   		<!-- 配置全局的结果页面 -->
+   		<global-results>
+   			<result name="success">/jsp/success.jsp</result>
+   		</global-results>
+   	
+   	
+   		<action name="demo1Action" class="com.ithc.demo1.Demo1ACtion">
+   			<!-- <result name="success">/jsp/success.jsp</result> -->
+   		</action>
+   		
+   		
+   		  <!--  
+    	原生Servlet API  在demo2包里面
+   		 -->
+   		<action name="demo2Action" class="com.ithc.demo2.Demo2Action">
+   				<!-- <result>/jsp/success.jsp</result> -->
+   		</action>
+   		
+   	</package>
+    
+  
+  	<!-- 
+  		type 类型
+  	 -->
+  	<package name="demo3" namespace="/" extends="struts-default">
+  	
+  		<action name="demo3One" class="com.ithc.demo3.Demo3OneAction">
+  		<!-- 
+  			转发到action  用chain 值 直接写配置的 访问路径，不要写 / 或者 .action
+  			重定向也是如此
+  		 -->
+  			<!-- <result name="ok" type="chain">demo3Two</result> -->
+  			
+  			<result name="ok" type="redirectAction">demo3Two</result>
+  			
+  		</action>
+  		
+  		<action name="demo3Two" class="com.ithc.demo3.Demo3TwoAction">
+  			
+  		</action>
+  		
+  			
+  	</package>
+  	
+  	
+  	<!-- 属性驱动 -->
+  	<package name="demo4" namespace="/" extends="struts-default">
+  		
+  		<action name="demo4Action" class="com.ithc.demo4.PersonAction"></action>
+  		
+  	</package>
+  	
+  	<!--  
+  		把属性封装到对象
+  	-->
+  	<package name="demo5" namespace="/" extends="struts-default">
+  		<action name="demo5Action" class="com.ithc.demo5.CustomerAction"></action>
+  	</package>
+  	
+  	<!--  
+  		模型驱动
+  	-->
+  	<package name="demo6" namespace="/" extends="struts-default">
+  		<action name="demo6Action" class="com.ithc.demo6.LinManAction"></action>
+  	</package>
+  	
+  	<!-- 
+  		把对象封装到集合
+  	 -->
+  	<package name="demo7" namespace="/" extends="struts-default">
+  			<action name="demo7Action" class="com.ithc.dmeo7.OrderAction"></action>
+  	</package>
+  	
+  	<!-- 
+  		拦截器
+  	 -->
+  	<package name="demo8" namespace="/" extends="struts-default">
+  		<!-- 配置自定义拦截器 -->
+  		<!-- <interceptors>
+  			<interceptor name="TestInterceptor" class="com.ithc.demo8.TestInterceptor"></interceptor>
+  		</interceptors> -->
+  		
+  		<!--  
+  			定义拦截器栈
+  		-->
+		<interceptors>
+  			<interceptor name="TestInterceptor" class="com.ithc.demo8.TestInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="TestInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		  		
+  		<action name="animalAction" class="com.ithc.demo8.AnimalAction">
+  			<!-- 引入拦截器 -->
+  			<!-- <interceptor-ref name="TestInterceptor"/> -->
+  			<!-- 如果自定义了拦截器会覆盖原来的 ，需要手动引入 -->
+  			<!-- <interceptor-ref name="defaultStack"/> -->
+  			
+  			<!-- 直接引入拦截器栈 -->
+  			<interceptor-ref name="myStack"/>
+  		 </action>
+  	
+  		<action name="carAction" class="com.ithc.demo8.CarAction"> 
+  		
+  			<interceptor-ref name="myStack"/>
+  		
+  		</action>
+  	
+  	</package>
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  
+     	
+
+</struts>

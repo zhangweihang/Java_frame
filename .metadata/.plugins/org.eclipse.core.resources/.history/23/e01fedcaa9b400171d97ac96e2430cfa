@@ -1,0 +1,27 @@
+package com.ithc.demo5;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class CustomerAction extends ActionSupport{
+	/**
+	 *  把属性值封装到对象
+	 */
+	private Custemer custemer;
+	
+	public Custemer getCustemer() {
+		System.out.println("get ... ");
+		return custemer;
+	}
+
+	public void setCustemer(Custemer custemer) {
+		System.out.println("set ... ");
+		this.custemer = custemer;
+	}
+
+
+	public String execute() throws Exception {
+		System.out.println(custemer);
+		return NONE;
+	}
+
+}

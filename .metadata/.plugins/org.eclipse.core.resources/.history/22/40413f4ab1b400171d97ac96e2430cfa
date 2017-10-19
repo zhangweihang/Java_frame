@@ -1,0 +1,12 @@
+package com.ihtc.two;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ShortM extends ActionSupport {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+}
