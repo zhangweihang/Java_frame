@@ -1,0 +1,18 @@
+package com.ihtc.demo1;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserAction extends ActionSupport{
+
+	@Override
+	public String execute() throws Exception {
+		System.out.println("默认的方法");
+		return NONE;
+	}
+	
+	public String eat(){
+		System.out.println("吃吃吃吃鸡");
+		return NONE;
+	}
+	
+}

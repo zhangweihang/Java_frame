@@ -1,0 +1,34 @@
+package com.ihtc.note;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Pointcut;
+
+public class EatAcpect {
+	
+	@Pointcut("execution(* *..*.*Dog.eat())")
+
+	public void before(){
+		System.out.println("前置通知");
+	}
+
+	public void after(){
+		System.out.println("最终通知");
+	}
+
+	public void around(ProceedingJoinPoint pjp){
+		
+		try {
+			System.out.println("环绕通知前");
+			pjp.proceed();
+			System.out.println("环绕通知后");
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void exception(){
+		System.out.println("异常通知通知");
+	}
+	
+}

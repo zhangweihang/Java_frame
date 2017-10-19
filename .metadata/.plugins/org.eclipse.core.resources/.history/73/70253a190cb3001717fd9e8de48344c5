@@ -1,0 +1,11 @@
+package com.ihtc.demo1;
+
+public class AccountServiceImpl implements AccountService {
+
+	@Override
+	public void transfer(int outId, int inId, double money) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

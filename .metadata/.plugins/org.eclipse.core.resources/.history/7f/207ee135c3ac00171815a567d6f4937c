@@ -1,7 +1,0 @@
-package com.ihtc.action;
-
-import javax.servlet.http.HttpServlet;
-
-public class PersonAction extends HttpServlet {
-
-}

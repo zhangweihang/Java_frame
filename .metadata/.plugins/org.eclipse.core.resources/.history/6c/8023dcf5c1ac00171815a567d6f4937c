@@ -1,7 +1,0 @@
-package com.ihtc.service;
-
-public class PersonService {
-
-	private PersonDAO pd = new PersonDAOImpl();
-	
-}

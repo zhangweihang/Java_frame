@@ -1,0 +1,94 @@
+package com.ithc.jdbc;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import com.ithc.bean.Account;
+
+public class TestJDBC {
+	JdbcTemplate template;
+	@Before
+	public void before1(){
+		//配置数据库链接
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql:///ithc");
+		dataSource.setUsername("root");
+		dataSource.setPassword("root1234");
+		// 数据库模版
+	    template = new JdbcTemplate();
+		template.setDataSource(dataSource);
+	}
+	
+	/**
+	 *  添加一条数据
+	 */
+	@Test
+	public void run1(){
+		int insert = template.update("insert into t_account (user_name,user_money) values(?,?)", "小凤",10000);
+		System.out.println(insert);
+		
+	}
+	
+	/**
+	 *  修改数据
+	 */
+	@Test
+	public void run2(){
+		int update = template.update("update t_account set user_name = ? where id = ?","冠希",2);
+		System.out.println(update);
+	}
+	
+	/**
+	 *  删除数据
+	 */
+	@Test
+	public void run3(){
+		int delete = template.update("delete from t_account where id = ?",1);
+		System.out.println(delete);
+	}
+	
+	/**
+	 *  查询 1一条
+	 */
+	@Test
+	public void run4(){
+		Account account = template.queryForObject("select id,user_name,user_money from t_account where id = ?",new BeanMapper(),2);
+		System.out.println(account);
+		
+	}
+	
+	/**
+	 *  查询所有
+	 */
+	@Test
+	public void run5(){
+		List<Account> query = template.query("select * from t_account", new BeanMapper());
+		System.out.println(query);
+	}
+	
+}
+
+class BeanMapper implements RowMapper<Account>{
+	@Override
+	public Account mapRow(ResultSet rs, int i) throws SQLException {
+		Account account = new Account();
+		account.setId(rs.getInt("id"));
+		account.setUser_name(rs.getString("user_name"));
+		account.setUser_money(rs.getDouble("user_money"));
+		return account;
+	}
+	
+}
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qm.dao.OrderdetaitblMapper" >
+  <resultMap id="BaseResultMap" type="com.qm.bean.Orderdetaitbl" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="menuID" property="menuid" jdbcType="INTEGER" />
+    <result column="orderID" property="orderid" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, menuID, orderID, num, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from orderdetailtbl
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from orderdetailtbl
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qm.bean.Orderdetaitbl" >
+    insert into orderdetailtbl (id, menuID, orderID, 
+      num, remark)
+    values (#{id,jdbcType=INTEGER}, #{menuid,jdbcType=INTEGER}, #{orderid,jdbcType=INTEGER}, 
+      #{num,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qm.bean.Orderdetaitbl" >
+    insert into orderdetailtbl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="menuid != null" >
+        menuID,
+      </if>
+      <if test="orderid != null" >
+        orderID,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="menuid != null" >
+        #{menuid,jdbcType=INTEGER},
+      </if>
+      <if test="orderid != null" >
+        #{orderid,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qm.bean.Orderdetaitbl" >
+    update orderdetailtbl
+    <set >
+      <if test="menuid != null" >
+        menuID = #{menuid,jdbcType=INTEGER},
+      </if>
+      <if test="orderid != null" >
+        orderID = #{orderid,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qm.bean.Orderdetaitbl" >
+    update orderdetailtbl
+    set menuID = #{menuid,jdbcType=INTEGER},
+      orderID = #{orderid,jdbcType=INTEGER},
+      num = #{num,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,11 @@
+package com.ihtc.note;
+
+public class Dog implements Animal {
+
+	@Override
+	public void eat() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

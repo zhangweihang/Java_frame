@@ -1,0 +1,7 @@
+<classpath>
+  <container id="Spring01!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/Object/GitHub/Java_frame/Spring01/WebContent/WEB-INF/lib/spring-context-3.2.0.RELEASE.jar">
+      <source-attachment-path>D:/develop/Java/jre7</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--IOC 控制返回  -->
+	<!-- 
+		id 就是给类取一个标识符，一个spring的配置文件里面id不能有一样的
+		class 类的全路径(包名+类名)
+	 -->
+
+	
+</beans>

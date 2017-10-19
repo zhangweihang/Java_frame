@@ -1,0 +1,9 @@
+package com.ihtc.demo1;
+
+public interface AccountDao {
+
+	public void draw();
+	
+	public void save();
+	
+}

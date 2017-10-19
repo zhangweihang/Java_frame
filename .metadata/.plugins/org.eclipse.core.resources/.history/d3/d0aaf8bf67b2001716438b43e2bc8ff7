@@ -1,0 +1,14 @@
+package com.ihtc.aop;
+
+public class MyAspect {
+	/*
+	 * 增强的方法
+	 */
+	static int i = 0;
+	public void log(){
+		System.out.println("日志..."+(++i));
+	}
+	public void log1(){
+		System.out.println("日志...前置"+(++i));
+	}
+}

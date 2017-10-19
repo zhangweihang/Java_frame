@@ -1,0 +1,30 @@
+package com.ithc.demo1;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao{
+	
+	
+//	private JdbcTemplate jdbcTemplate;
+//	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+//		this.jdbcTemplate = jdbcTemplate;
+//	}
+	/**
+	 *  扣钱
+	 */
+	@Override
+	public void out(String out, double money) {
+		this.getJdbcTemplate().update("update t_account set user_money = user_money - ? where user_name = ?",money,out);
+		
+	}
+	/**
+	 *  进钱
+	 */
+	@Override
+	public void in(String in, double money) {
+		this.getJdbcTemplate().update("update t_account set user_money = user_money + ? where user_name = ?",money,in);
+		
+	}
+
+}

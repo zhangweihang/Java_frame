@@ -5,6 +5,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\zzz\Spring\day04\Spring4"/>
+			<item value="E:\zzz\Spring\day03\Spring3"/>
+			<item value="E:\zzz\Spring\day02\Spring2"/>
+			<item value="E:\zzz\Spring\day03\Spring3_JDBC"/>
+			<item value="E:\zzz\Spring\day01\Spring1"/>
 			<item value="E:\zzz\Java_frame\day06\Servlet7"/>
 			<item value="E:\zzz\up_download\0a下载\Servlet7"/>
 		</list>

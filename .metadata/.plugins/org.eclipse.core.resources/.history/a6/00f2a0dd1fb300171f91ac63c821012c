@@ -1,0 +1,28 @@
+package com.ihtc.demo1;
+
+import javax.annotation.Resource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:applicationContext.xml")
+public class Test1 {
+
+	@Resource(name="dataSource")
+	ComboPooledDataSource dataSource;
+	
+	@Test
+	public void test1() {
+		
+		JdbcTemplate jt = new JdbcTemplate();
+		jt.setDataSource(dataSource);
+		jt.update("insert into t_account(user_name,user_money) value(?,?)","three",33333);
+		
+	}
+
+}

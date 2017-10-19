@@ -1,0 +1,10 @@
+package com.ihtc.aop;
+
+public interface UserService {
+
+	void save();
+	void update();
+	void delete();
+	void insert()
+	
+}

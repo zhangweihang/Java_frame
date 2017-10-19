@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qm.dao.TabletblMapper" >
+  <resultMap id="BaseResultMap" type="com.qm.bean.Tabletbl" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="Ord_id" property="ordId" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="VARCHAR" />
+    <result column="flag" property="flag" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, Ord_id, num, flag, description
+  </sql>
+  <select id="selectBy" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tabletbl
+  </select>
+  
+  <select id="selectPage" resultMap="BaseResultMap" >
+  select * from tabletbl limit #{startIndex},#{PAGE_SIZE}
+  </select>
+  
+  <select id="select" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select * from tabletbl where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tabletbl
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.qm.bean.Tabletbl" >
+    insert into tabletbl (id, Ord_id, num, 
+      flag, description)
+    values (#{id,jdbcType=INTEGER}, #{ordId,jdbcType=INTEGER}, #{num,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qm.bean.Tabletbl" >
+    insert into tabletbl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ordId != null" >
+        Ord_id,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ordId != null" >
+        #{ordId,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qm.bean.Tabletbl" >
+    update tabletbl
+    <set >
+      <if test="ordId != null" >
+        Ord_id = #{ordId,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qm.bean.Tabletbl" >
+    update tabletbl
+    set Ord_id = #{ordId,jdbcType=INTEGER},
+      num = #{num,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

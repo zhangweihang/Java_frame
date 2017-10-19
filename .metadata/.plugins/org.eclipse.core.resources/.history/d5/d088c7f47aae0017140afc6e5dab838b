@@ -1,0 +1,4 @@
+db_url=jdbc:mysql://127.0.0.1:3306/wireless?useUnicode=true&characterEncoding=utf8
+db_username=root
+db_password=root1234
+db_driver=com.mysql.jdbc.Driver

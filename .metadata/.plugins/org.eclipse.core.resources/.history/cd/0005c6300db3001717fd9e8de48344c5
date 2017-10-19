@@ -1,0 +1,25 @@
+package com.ihtc.demo1;
+
+import org.springframework.transaction.interceptor.TransactionAspectUtils;
+import org.springframework.transaction.support.TransactionTemplate;
+
+public class AccountServiceImpl implements AccountService {
+
+	private AccountDao accountDao;
+	private TransactionTemplate transactionTemplate;
+	
+	public void setAccountDao(AccountDao accountDao) {
+		this.accountDao = accountDao;
+	}
+
+	
+	
+	@Override
+	public void transfer(int outId, int inId, double money) {
+		
+		
+		
+		
+	}
+
+}

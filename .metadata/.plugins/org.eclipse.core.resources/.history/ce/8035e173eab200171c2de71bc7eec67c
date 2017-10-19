@@ -1,0 +1,9 @@
+package com.ihtc.bean;
+
+public class Account {
+	
+	private int id;
+	private String user_name;
+	private double user_money;
+	
+}

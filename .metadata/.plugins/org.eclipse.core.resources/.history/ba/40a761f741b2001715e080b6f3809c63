@@ -1,0 +1,34 @@
+package com.ihtc.aop;
+
+import javax.annotation.Resource;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+@RunWith(SpringJUnit4ClassRunner.class)
+/*@ContextConfiguration("classpath:applicationContext.xml")*/
+public class MyTest {
+	
+	ApplicationContext ac;
+	@Before
+	public void init() {
+		
+		ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		
+	}
+
+	@Resource(name="userService")
+	private UserServiceImpl us;
+	
+	@Test
+	public void test1() {
+		us = ac.getBean("userService", UserServiceImpl.class);
+		us.save();
+	}
+
+}

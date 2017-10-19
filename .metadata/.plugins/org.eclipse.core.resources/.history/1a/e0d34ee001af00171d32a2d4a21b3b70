@@ -1,0 +1,36 @@
+package com.ihtc.spring;
+
+import java.util.List;
+
+public class Car {
+
+	@Override
+	public String toString() {
+		return "Car [price=" + price + ", name=" + name + ", list=" + list + "]";
+	}
+	private Double price;
+	private String name;
+	private List<String> list;
+	private Map<String,String> map;
+	
+	
+	public List<String> getList() {
+		return list;
+	}
+	public void setList(List<String> list) {
+		this.list = list;
+	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+}

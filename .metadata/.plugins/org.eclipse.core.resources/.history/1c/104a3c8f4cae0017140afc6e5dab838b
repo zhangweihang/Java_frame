@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.util.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>index</title>
+</head>
+<body>
+	这是首页0.0，真的菜
+	<%--看不见我--%>
+	<!-- 能看见我 -->
+	<br/>
+	<% 
+		Date date = new Date();
+		out.print("<h1>目前时间为"+date+"</h1>");
+	%>
+	<br/>
+	<%@ include file="child.jsp" %>
+	<br/>
+	<%= new Date() %>
+	<br/>
+	<jsp:scriptlet>
+		out.println("nice");
+	</jsp:scriptlet>
+	<br/>
+	<%!
+		int num[] = {1,2,3};
+		int getNum(int i){
+			return num[i];
+		}
+	%>
+	<br/>
+	-----------end------------
+</body>
+</html>
