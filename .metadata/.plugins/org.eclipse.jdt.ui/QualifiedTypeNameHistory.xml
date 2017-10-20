@@ -26,7 +26,6 @@
 <fullyQualifiedTypeName name="com.ihtc.util.Person"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="javax.servlet.Servlet"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
@@ -52,4 +51,11 @@
 <fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringJUnit4ClassRunner"/>
 <fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionContext"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 </qualifiedTypeNameHistroy>
