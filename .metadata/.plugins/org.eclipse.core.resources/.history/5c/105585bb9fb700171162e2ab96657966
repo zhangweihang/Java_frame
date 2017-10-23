@@ -1,0 +1,25 @@
+package com.ihtc.file;
+
+import java.io.File;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class TestFile extends ActionSupport {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	File upload;
+	
+	
+	@Override
+	public String execute() throws Exception {
+		
+		
+		
+		return NONE;
+	}
+	
+}

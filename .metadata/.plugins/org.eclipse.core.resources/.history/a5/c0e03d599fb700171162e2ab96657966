@@ -1,0 +1,9 @@
+package com.ihtc.file;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class TestFile extends ActionSupport {
+
+	
+	
+}

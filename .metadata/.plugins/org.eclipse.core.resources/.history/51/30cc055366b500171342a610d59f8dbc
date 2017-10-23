@@ -1,0 +1,19 @@
+package com.ihtc.demo4;
+
+import com.ihtc.demo2.Dog;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ValueStackList extends ActionSupport {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Override
+	public String execute() throws Exception {
+		// TODO Auto-generated method stub
+		return super.execute();
+	}
+
+}

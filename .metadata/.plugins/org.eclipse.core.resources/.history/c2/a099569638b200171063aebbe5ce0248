@@ -1,9 +1,0 @@
-package com.ihtc.aop;
-
-public class MyAspect {
-
-	void aspect(){
-		System.out.println("增强...");
-	}
-	
-}

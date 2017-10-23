@@ -1,0 +1,10 @@
+package com.ihtc.file;
+
+public class FileName {
+
+	public static String getFileName(){
+		
+		return null;
+	}
+	
+}

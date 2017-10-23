@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 
+		复习通配符的访问方式
+	 -->
+   	<package name="demo" namespace="/" extends="struts-default">
+   	
+   		<action name="demo1" class="com.ithc.demo1.DemoValueStack">
+   			<result name="success">/jsp/demo1.jsp</result>
+   		</action>
+   	
+   		<action name="demo2" class="com.ithc.demo2.Demo2ValueStack">
+   			<result>/jsp/demo2.jsp</result>
+   		</action>
+   	
+   		<action name="demo3" class="com.ithc.demo3.Demo3ValueSatck" >
+   			<result>/jsp/demo3.jsp</result>
+   		</action>
+   		
+   		<action name="demo4" class="com.ithc.demo4.Demo4ValueStack">
+   			
+   			<result>/jsp/demo4.jsp</result>
+   		</action>
+   		
+   		<action name="demo5" class="com.ithc.demo5.Demo5ValueSatck">
+   			<result>/jsp/demo5.jsp</result>
+   		</action>
+   	
+   	</package>
+   
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  
+     	
+
+</struts>

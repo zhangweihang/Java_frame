@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+   	<package name="demo" namespace="/" extends="struts-default">
+   	
+   		<action name="demo1" class="com.ihtc.demo1.ValueStackDemo">
+   			<result name="success">/jsp/demo1.jsp</result>
+   		</action>
+   		
+   		<action name="demo2" class="com.ihtc.demo2.ValueStackCD">
+   			<result name="success">/jsp/demo2.jsp</result>
+   		</action>
+   		
+   	</package>
+   
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  
+     	
+
+</struts>

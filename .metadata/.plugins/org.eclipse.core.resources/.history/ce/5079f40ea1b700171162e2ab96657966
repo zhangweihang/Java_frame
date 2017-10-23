@@ -1,0 +1,52 @@
+package com.ithc.file;
+
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+
+import com.opensymphony.xwork2.ActionSupport;
+/**
+ *  文件上传
+ * @author Administrator
+ *
+ */
+public class TestFile extends ActionSupport {
+	
+	//上传的文件
+	private File upload;
+	//文件名
+	private String uploadFileName;
+	//文件类型
+	private String uploadContentType;
+	//提供set方法
+	private static final long serialVersionUID = 1L;
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		System.out.println("文件名 : "+uploadFileName);
+		System.out.println("文件类型 : "+uploadContentType);
+		if(uploadFileName != null){
+			//给名字改成一个唯一的标识符
+			String uuidname = FileName.getName(uploadFileName);
+			
+			File file = new File("E:/testFile/"+uuidname);
+			
+			FileUtils.copyFile(upload, file);
+		}
+		
+		return NONE;
+	}
+
+}

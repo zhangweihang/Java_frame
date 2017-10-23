@@ -1,0 +1,15 @@
+package com.ihtc.demo4;
+
+import com.ihtc.demo2.Dog;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ValueStackList extends ActionSupport {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	Dog dog1 = new Dog();
+
+}

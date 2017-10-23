@@ -1,0 +1,30 @@
+package com.ihtc.demo2;
+
+import org.apache.logging.log4j.ThreadContext.ContextStack;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ValueStackCD extends ActionSupport{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Override
+	public String execute() throws Exception {
+		
+		Dog dog = new Dog();
+		dog.setName("旺财");
+		dog.setType("中华田园犬");
+		
+		Cat cat = new Cat();
+		cat.setName("小黑");
+		cat.setWeight(100);
+		
+		
+		
+		return SUCCESS;
+	}
+
+}
