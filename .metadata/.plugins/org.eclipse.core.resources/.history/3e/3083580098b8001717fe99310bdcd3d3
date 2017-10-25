@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+			    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ihtc.bean.Customer" table="cst_customer">
+		<!-- 主键生成 -->
+		<id name="cust_id" column="cust_id">
+			<generator class="native"></generator>
+		</id>
+		<!-- 
+			如果有表就不用写length,如果用映射文件生存表需要写length
+		 -->
+		<property name="cust_name" column="cust_name" length="10"/>
+		<property name="cust_source" column="cust_source" length="20"/>
+		<property name="cust_industry" column="cust_industry" length="30"/>
+		<property name="cust_level" column="cust_level" length="20"/>
+		<property name="cust_linkman" column="cust_linkman" length="20"/>
+		<property name="cust_phone" column="cust_phone" length="20"/>
+		<property name="cust_mobile" column="cust_mobile" length="20"/>
+	</class>
+</hibernate-mapping>

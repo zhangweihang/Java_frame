@@ -1,0 +1,43 @@
+package com.ihtc.demo;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+
+public class TestSingleDog {
+
+	@Test
+	public void test1(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = new SingleDog();
+		sd.setNickname("加藤鹰");
+		sd.setHobby("make...");
+		sd.setAPM(666);
+		
+		session.save(sd);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test2(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = session.get(SingleDog.class, 1);
+		sd.setNickname("孙悟空");
+		
+		session.save(sd);
+		
+		tr.commit();
+		
+	}
+	
+}

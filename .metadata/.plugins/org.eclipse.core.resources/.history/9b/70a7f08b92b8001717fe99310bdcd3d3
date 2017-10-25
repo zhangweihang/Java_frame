@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+			"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+			"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		#hibernate.connection.driver_class com.mysql.jdbc.Driver
+#hibernate.connection.url jdbc:mysql:///test
+#hibernate.connection.username gavin
+#hibernate.connection.password
+	
+	</session-factory>
+
+</hibernate-configuration>

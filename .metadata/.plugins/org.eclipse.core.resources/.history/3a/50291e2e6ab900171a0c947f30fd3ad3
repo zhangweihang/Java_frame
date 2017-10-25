@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+   
+<hibernate-mapping>
+	<class name="com.ihtc.demo.SingleDog" table="single_dog">
+		<id name="identity" column="identity">
+			<generator class="native"/>
+		</id>
+		<version name="version"></version>
+		<property name="nickname" column="name"></property>
+		<property name="nickname" column="name"></property>
+		<property name="nickname" column="name"></property>
+		<property name="nickname" column="name"></property>
+	</class>
+</hibernate-mapping>

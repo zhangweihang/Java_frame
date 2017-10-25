@@ -1,0 +1,86 @@
+package com.ihtc.demo;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+
+public class TestSingleDog {
+
+	@Test
+	public void test1(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = new SingleDog();
+		sd.setNickname("加藤鹰");
+		sd.setHobby("make...");
+		sd.setAPM(666);
+		
+		session.save(sd);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test2(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = session.get(SingleDog.class,1L);
+		sd.setNickname("孙悟空");
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test3(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = session.get(SingleDog.class,1L);
+		System.out.println(sd);
+		System.out.println("-------------------------");
+		sd = session.get(SingleDog.class,1L);
+		System.out.println(sd);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test4(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = new SingleDog();
+		sd.setNickname("我加藤鹰又回来辣");
+		sd.setHobby("make...");
+		sd.setAPM(999);
+		
+		Serializable id = session.save(sd);
+		System.out.println(id);
+		System.out.println(session.get(SingleDog.class,id));
+		
+		tr.commit();
+		
+	}
+	
+	/**
+	 * 下面的都很简单，一看就懂了，不浪费时间了
+	 * 
+	 *  Session.clear() -- 清空缓存。 
+	 *  Session.evict(Object entity) 从一级缓存中清除指定的实体对象。
+	 *   Session.flush() -- 刷出缓存
+	 */
+
+}

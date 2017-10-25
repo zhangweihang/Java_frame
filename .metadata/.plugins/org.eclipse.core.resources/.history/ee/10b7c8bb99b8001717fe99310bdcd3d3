@@ -1,0 +1,9 @@
+package com.ihtc.utils;
+
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtil {
+
+	private static final Configuration config = new Configuration();
+	
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+			"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+			"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql:///hibernate_day01</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
+		
+		<!-- 数据库方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.NySQLDialect</property>
+		
+		<!-- 可选配置  -->
+		<!-- 显示sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 格式化sql语句 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 
+		数据库表的创建与修改，
+		validate检验字段 create 如果有先删除，在创建，一般用在自己测试 update 如果有就值执行对数据库操作的语句，
+		如果没有就会先创建一张表，然后进行相应的操作，一般工作使用
+		 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<mapping resource="com/ihtc/bean/Custimer.hbm.xml"/>
+		
+	</session-factory>
+
+</hibernate-configuration>

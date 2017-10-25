@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ihtc.demo.SingleDog" table="single_dog">
+		<id name="identity" column="id">
+			<!-- <generator class="native"/> -->
+			
+			<!--  
+				uuid 会在数据库里面生成一个唯一标识符,需要注意的是，bean中的类的id必须是String类型
+			-->
+		
+			<generator class="uuid"/>
+			
+		</id>
+		<version name="version" column="zzz_version"></version>
+		<property name="nickname" column="name" length="30"/>
+		<property name="gender" column="gender" length="30"/>
+		<property name="hobby" column="hobby" length="30"/>
+		<property name="APM" column="apm"></property>
+	</class>
+</hibernate-mapping>

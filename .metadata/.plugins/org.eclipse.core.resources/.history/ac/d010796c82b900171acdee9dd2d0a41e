@@ -1,0 +1,116 @@
+package com.ihtc.demo;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+import com.ithc.demo.Person;
+
+public class TestSingleDog {
+
+	@Test
+	public void test1(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = new SingleDog();
+		sd.setNickname("加藤鹰");
+		sd.setHobby("make...");
+		sd.setAPM(666);
+		
+		session.save(sd);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test2(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = session.get(SingleDog.class,1L);
+		sd.setNickname("孙悟空");
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test3(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = session.get(SingleDog.class,1L);
+		System.out.println(sd);
+		System.out.println("-------------------------");
+		sd = session.get(SingleDog.class,1L);
+		System.out.println(sd);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test4(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = new SingleDog();
+		sd.setNickname("我加藤鹰又回来辣");
+		sd.setHobby("make...");
+		sd.setAPM(999);
+		
+		Serializable id = session.save(sd);
+		System.out.println(id);
+		System.out.println(session.get(SingleDog.class,id));
+		
+		tr.commit();
+		
+	}
+	
+	/**
+	 * 下面的都很简单，一看就懂了，不浪费时间了
+	 * 
+	 *  Session.clear() -- 清空缓存。 
+	 *  Session.evict(Object entity) 从一级缓存中清除指定的实体对象。
+	 *   Session.flush() -- 刷出缓存，特别记一下
+	 *   session flush在commit之前默认都会执行他。
+	 *   也可以手动执行它，他主要做了两件事：清理缓存。执行SQL。
+	 *   1)事务提交时如果flush模式不为FlushMode.NEVER,commit()将调用flush(). 
+	 *   2)在某些查询语句之前（此查询语句之前的语句已经改变了数据库状态，所以需要调用flush（）以同步数据库是查出来的数据是经过更改的）。
+	 *   在调用Session.flush()时，涉及的SQL语句会按照下面的顺序执行。
+	 *
+	 */
+
+	@Test
+	public void test5(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		SingleDog sd = session.get(SingleDog.class,2L);
+		sd.setGender("女");
+		
+		Query query = session.createQuery("from SingleDog where id = ?");
+		// ？ 的位置值 从 0 开始
+		query.setLong(0, 2L);
+		List<SingleDog> list = query.list();
+		for (SingleDog sdo : list) {
+			System.out.println(sdo);
+		}
+		
+		tr.commit();
+		
+	}
+	
+}

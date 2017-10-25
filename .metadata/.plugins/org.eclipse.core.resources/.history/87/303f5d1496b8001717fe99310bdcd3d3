@@ -1,0 +1,37 @@
+package com.ihtc.bean;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.junit.Test;
+
+public class TestC {
+	
+	@Test
+	public void test1(){
+		
+		//1.加载配置文件
+		Configuration config = new Configuration();
+		//默认加载src目录下的配置文件
+		config.configure();
+		
+		//2.创建SessionFactory对象
+		SessionFactory factory = config.buildSessionFactory();
+		
+		//3.创建session对象
+		Session session = factory.openSession();
+		
+		//4.开启事物
+		Transaction tr = session.beginTransaction();
+		
+		//5.编写保存代码
+		Customer c = new Customer();
+		c.setCust_id(1L);
+		c.setCust_name("葫芦娃");
+		c.setCust_level("超级无敌大火箭");
+		
+		
+	}
+	
+}

@@ -1,0 +1,13 @@
+package com.ihtc.demo;
+
+public class SingleDog {
+
+	Long identity;
+	String nickname;
+	String gender;
+	String hobby;
+	Integer APM;
+	
+	
+	
+}

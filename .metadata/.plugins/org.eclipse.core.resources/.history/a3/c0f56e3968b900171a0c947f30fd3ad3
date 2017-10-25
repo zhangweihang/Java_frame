@@ -1,0 +1,8 @@
+package com.ihtc.demo;
+
+public class SingleDog {
+
+	String nickname;
+	Integer APM;
+	
+}

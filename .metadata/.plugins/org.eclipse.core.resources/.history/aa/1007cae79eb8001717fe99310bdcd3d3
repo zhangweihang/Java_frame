@@ -1,0 +1,89 @@
+package com.ihtc.bean;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+
+public class TestC {
+	
+	@Test
+	public void test1(){
+		
+		//1.加载配置文件
+		Configuration config = new Configuration().configure();
+		//默认加载src目录下的配置文件
+		config.configure();
+		
+		//2.创建SessionFactory对象
+		SessionFactory factory = config.buildSessionFactory();
+		
+		//3.创建session对象
+		Session session = factory.openSession();
+		
+		//4.开启事物
+		Transaction tr = session.beginTransaction();
+		
+		//5.编写保存代码
+		Customer c = new Customer();
+		c.setCust_id((long) 1);
+		c.setCust_name("葫芦娃");
+		c.setCust_level("超级无敌大火箭");
+		session.save(c);
+		
+		//6.提交事务
+		tr.commit();
+		
+		//7.释放资源
+		session.close();
+		factory.close();
+		
+		
+	}
+	
+	@Test
+	public void delete(){
+		
+		Session session = HibernateUtil.getSession();
+		
+		Transaction tr = session.beginTransaction();
+		
+		Customer c = session.get(Customer.class, 1L);
+		c.setCust_id((long) 2);
+		c.setCust_name("葫芦娃");
+		c.setCust_level("超级无敌风火轮"
+				+ "");
+		session.save(c);
+		
+		tr.commit();
+		
+		session.close();
+		HibernateUtil.close();
+		
+	}
+
+	@Test
+	public void test2(){
+		
+		Session session = HibernateUtil.getSession();
+		
+		Transaction tr = session.beginTransaction();
+		
+		Customer c = new Customer();
+		c.setCust_id((long) 2);
+		c.setCust_name("葫芦娃");
+		c.setCust_level("超级无敌风火轮"
+				+ "");
+		session.save(c);
+		
+		tr.commit();
+		
+		session.close();
+		HibernateUtil.close();
+		
+	}
+	
+}
