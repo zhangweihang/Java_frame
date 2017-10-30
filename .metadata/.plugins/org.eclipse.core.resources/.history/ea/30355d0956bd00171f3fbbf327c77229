@@ -1,0 +1,14 @@
+package com.ihtc.hsql;
+
+import org.junit.Test;
+
+public class HsqlTest {
+
+	@Test
+	public void test1(){
+		
+		
+		
+	}
+	
+}

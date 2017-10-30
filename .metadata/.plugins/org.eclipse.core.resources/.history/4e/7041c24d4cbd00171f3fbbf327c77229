@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ithc.bean.IdCard" table="idCard">
+		<id name="cid" column="cid">
+			<generator class="native"/>
+		</id>
+		
+		<property name="number" column="number" length="20"/>
+		
+		<!--一对多( 多对一的特例)  -->
+		<!--  
+			name 属性值 对象的属性
+			column="p_id" 》》 p_id是在表中生成的外间字段
+			unique="true" 代表这个字段是唯一
+			cascade="save-update" 级联操作
+		-->
+		<many-to-one name="person" class="com.ithc.bean.Person" column="p_id" unique="true" cascade="all"/>
+		
+	</class>
+	
+</hibernate-mapping>
+

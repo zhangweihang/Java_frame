@@ -1,0 +1,124 @@
+package com.ihtc.bean;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+
+public class OneToManyTest {
+
+	@Test
+	public void test1(){
+		
+		Session session  = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		Customer c = new Customer();
+		c.setCust_name("傲娇小公举");
+		
+		Linkman l1 = new Linkman();
+		l1.setLkm_name("lman1");
+		Linkman l2 = new Linkman();
+		l2.setLkm_name("lman2");
+		
+		//双向关联(一方添加到多方，多方添加到一方)
+		c.getLinkmans().add(l1);
+		c.getLinkmans().add(l2);
+		l1.setCustomer(c);
+		l2.setCustomer(c);
+		
+		session.save(c);
+		session.save(l1);
+		session.save(l2);
+		
+		tr.commit();
+		
+	}
+	
+
+	@Test
+	public void test2(){
+		
+		Session session  = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		Customer c = new Customer();
+		c.setCust_name("傲娇小公举4");
+		
+		Linkman l1 = new Linkman();
+		l1.setLkm_name("lman7");
+		Linkman l2 = new Linkman();
+		l2.setLkm_name("lman8");
+		
+		c.getLinkmans().add(l1);
+		c.getLinkmans().add(l2);
+		l1.setCustomer(c);
+		l2.setCustomer(c);
+		
+		session.save(l2);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test3(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		Customer c = session.get(Customer.class, 1L); 
+		
+		session.delete(c);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test4(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		Linkman l1 = session.get(Linkman.class, 7L); 
+		Linkman l2 = session.get(Linkman.class, 8L); 
+		
+		session.delete(l1);
+		session.delete(l2);
+		
+		tr.commit();
+		
+	}
+
+	@Test
+	public void test5(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		Linkman l1 = session.get(Linkman.class, 9L); 
+		
+		session.delete(l1);
+		
+		tr.commit();
+		
+	}
+	
+	@Test
+	public void test6(){
+		
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		Customer c = session.get(Customer.class, 5L);
+		Linkman l = session.get(Linkman.class, 11L);
+		
+		c.getLinkmans().remove(l);
+		
+		tr.commit();
+		
+	}
+	
+}

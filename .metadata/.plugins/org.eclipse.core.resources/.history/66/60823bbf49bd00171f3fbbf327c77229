@@ -1,0 +1,34 @@
+package com.ithc.bean;
+
+public class IdCard {
+	
+	private Integer cid;
+	private String number;
+	
+	private Person person;
+
+	public Integer getCid() {
+		return cid;
+	}
+
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+}

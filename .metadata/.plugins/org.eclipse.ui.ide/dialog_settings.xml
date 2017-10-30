@@ -5,6 +5,10 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\zzz\hibernate\day05\Hibernater5"/>
+			<item value="E:\zzz\Struts2\Struts2_test"/>
+			<item value="D:\aaa\Second"/>
+			<item value="E:\zzz\hibernate\day03\Hibernate3"/>
 			<item value="E:\zzz\hibernate\day01\Hibernate1"/>
 			<item value="E:\zzz\Struts2\day04\StrutsDay4"/>
 			<item value="E:\zzz\Struts2\day03\Struts2Day3"/>

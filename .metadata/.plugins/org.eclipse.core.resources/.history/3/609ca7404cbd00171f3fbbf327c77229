@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.ihtc.bean.IdCard" table="idCard">
+		<id name="cid">
+			<generator class="native"/>
+		</id>
+		<property name="number" length="30"/>
+		<!-- 
+			unique="true"代表这个字段是唯一的
+		 -->
+		<many-to-one name="person" class="com.ihtc.bean.Person" column="p_id" unique="true"/>
+		
+	</class>
+</hibernate-mapping>

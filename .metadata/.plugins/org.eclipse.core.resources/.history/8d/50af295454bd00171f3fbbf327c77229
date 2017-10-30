@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ihtc.hsql.Customer" table="customer">
+		<id name="cust_id">
+			<generator class="native"/>
+		</id>
+		<property name="cust_name" length="20"/>
+		<property name="cust_user_id"/>
+		<property name="cust_create_id"/>
+		<property name="cust_source" length="20"/>
+		<property name="cust_industry" length="20"/>
+		<property name="cust_level" length="20"/>
+		<property name="cust_linkman" length="20"/>
+		<property name="cust_phone" length="20"/>
+		<property name="cust_mobile" length="20"/>
+		
+		<set name="linkmans">
+			
+		</set>
+		
+	</class>
+</hibernate-mapping>

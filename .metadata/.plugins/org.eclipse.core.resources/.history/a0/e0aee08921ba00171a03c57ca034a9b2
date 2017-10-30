@@ -1,0 +1,17 @@
+package com.ihtc.bean;
+
+public class Linkman {
+	
+	private Long lkm_id;
+	private String lkm_name;
+	private String lkm_gender;
+	private String lkm_phone;
+	private String lkm_mobile;
+	private String lkm_email;
+	private String lkm_qq;
+	private String lkm_position;
+	private String lkm_memo;
+	
+	private Customer customer;
+	
+}

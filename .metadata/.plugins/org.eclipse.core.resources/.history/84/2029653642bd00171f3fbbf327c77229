@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ithc.manytomany.User" table="cst_user">
+		<id name="uid" column="uid">
+			<generator class="native"/>
+		</id>
+		
+		<property name="uname" column="uname"/>
+		<property name="upassword" column="upassword"/>
+	
+		<!-- 
+			多对多配置
+			name 集合的对象
+			table 需要生成中间表的名字
+		 -->
+		<set name="roles" table = "user_role">
+			<!--  
+				需要在中间表中生成的字段，与本表关联
+			-->
+			<key column="user_id"/>
+			<!--  
+				class 是set集合对象的全类名
+				column 是中间表的另外一个字段与 集合对象的这张表关联
+			-->
+			<many-to-many class="com.ithc.manytomany.Role" column="role_id"/>
+		</set>
+	
+	
+	</class>
+	
+	
+</hibernate-mapping>
+

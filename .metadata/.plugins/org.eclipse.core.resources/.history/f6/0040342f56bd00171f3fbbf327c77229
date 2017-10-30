@@ -1,0 +1,35 @@
+package com.ihtc.hsql;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+
+public class HsqlTest {
+
+	private Session session;
+	private Transaction tr;
+	
+	@Before
+	public void before(){
+		 session = HibernateUtil.getCurrentSession();
+		 tr = session.beginTransaction();
+	}
+	
+	@After
+	public void after(){
+		tr.commit();
+	}
+	
+	
+	@Test
+	public void test1(){
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.ihtc.bean.IdCard" table="idCard">
+		<id name="cid">
+			<generator class="native"/>
+		</id>
+		<property name="number" length="30"/>
+		
+		<many-to-one name="person" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+package com.ihtc.manytomany;
+
+import org.junit.Test;
+
+public class ManyToManyTest {
+	
+	@Test
+	public void test1(){
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;Hibernate03/src/com.ihtc.manytomany&apos;&#x0D;&#x0A;- Original project: &apos;Hibernate3&apos;&#x0D;&#x0A;- Destination element: &apos;Hibernate03/src/com.ihtc.manytomany&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.ithc.manytomany.Role.java&#x0D;&#x0A;     com.ithc.manytomany.User.java" description="Copy compilation units" destination="=Hibernate03/src&lt;com.ihtc.manytomany" element1="/src&lt;com.ithc.manytomany{Role.java" element2="/src&lt;com.ithc.manytomany{User.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1509347002827" units="2" version="1.0"/>
+</session>

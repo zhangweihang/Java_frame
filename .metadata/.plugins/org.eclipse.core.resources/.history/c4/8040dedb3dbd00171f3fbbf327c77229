@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<class name="com.ihtc.bean.Customer" table="cst_customer">
+    		
+    		<id name="cust_id" column="cust_id">
+    			<generator class="native"/>
+    		</id>
+    		
+    		<property name="cust_name" column="cust_name" length="20"/>
+    		<property name="cust_user_id" column="cust_user_id"/>
+    		<property name="cust_create_id" column="cust_create_id"/>
+    		<property name="cust_source" column="cust_source" length="20"/>
+    		<property name="cust_industry" column="cust_industry" length="20"/>
+    		<property name="cust_level" column="cust_level" length="20"/>
+    		<property name="cust_linkman" column="cust_linkman" length="20"/>
+    		<property name="cust_phone" column="cust_phone" length="20"/>
+    		<property name="cust_mobile" column="cust_mobile" length="20"/>
+    		
+    		<!-- 
+			一对多配置
+			name 集合对象
+			key 对象字段中的外间
+			class 集合里面对象的全路径
+			
+			cascade 级联操作   
+			级联保存 ： 保存谁 save(?)级联谁  
+			-->
+    		<set name="linkmans" cascade="save-update,delete-orphon" inverse="true">
+    			<key column="lkm_cust_id"/>
+    			<one-to-many class="com.ihtc.bean.Linkman"/>
+    		</set>
+    		
+    	</class>
+    </hibernate-mapping>

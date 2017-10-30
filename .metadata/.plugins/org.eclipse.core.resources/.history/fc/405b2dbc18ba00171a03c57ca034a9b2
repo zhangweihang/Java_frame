@@ -1,0 +1,16 @@
+package com.ihtc.bean;
+
+public class Customer {
+
+	Long cust_id;
+	String cust_name;
+	Long cust_user_id;
+	Long cust_create_id;
+	String cust_source;
+	String cust_industry;
+	String cust_level;
+	String cust_linkman;
+	String cust_phone;
+	String cust_mobile;
+	
+}

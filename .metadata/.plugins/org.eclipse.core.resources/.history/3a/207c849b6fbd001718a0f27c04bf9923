@@ -1,0 +1,23 @@
+package com.ihtc.hsql;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+
+public class CriteriaTest_ByTheWay_InPassing_Passingly_Incidentally {
+
+	@Before
+	public void before(){
+		Session session = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+	}
+	
+	@Test
+	public void test1(){
+		
+	}
+	
+}

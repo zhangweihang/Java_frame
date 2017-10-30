@@ -1,0 +1,32 @@
+package com.ihtc.bean;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.ihtc.utils.HibernateUtil;
+
+public class OneToManyTest {
+
+	@Test
+	public void test1(){
+		
+		Session session  = HibernateUtil.getCurrentSession();
+		Transaction tr = session.beginTransaction();
+		
+		Customer c = new Customer();
+		c.setCust_name("傲娇小公举");
+		
+		Linkman l1 = new Linkman();
+		l1.setLkm_name("lman1");
+		Linkman l2 = new Linkman();
+		l1.setLkm_name("lman2");
+		
+		c.getLinkmans().add(l1);
+		c.getLinkmans().add(l2);
+		
+		tr.commit();
+		
+	}
+	
+}

@@ -1,0 +1,10 @@
+package com.ihtc.manytomany;
+
+public class ManyToManyTest {
+	
+	@Test
+	public void test1(){
+		
+	}
+	
+}
